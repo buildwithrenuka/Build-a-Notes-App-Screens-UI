@@ -1,50 +1,112 @@
-# Welcome to your Expo app 👋
+# 🇳🇴 Norway Travel Notes App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautifully designed **Notes App** built with **React Native + Expo**, themed around a Norway travel journal. Built as part of a React Native UI assignment.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Screens
 
-   ```bash
-   npm install
-   ```
+### View 1 — Notes Listing Screen
+- Scrollable list of notes using `FlatList`
+- Each note card shows **tag**, **date**, **title**, and **content preview**
+- **Search bar** to filter notes by title, content, or tag
+- **Dark / Light mode toggle** via `Switch`
+- **Floating Action Button (+)** to create a new note
+- Norway-themed `ImageBackground` header with green fjord photo
 
-2. Start the app
+### View 2 — Note Editor Screen
+- `TextInput` for note title
+- Multiline `TextInput` for note body
+- `KeyboardAvoidingView` — keyboard never overlaps inputs
+- `ImageBackground` header with Norway forest photo
+- **Back** and **Save** buttons via `Pressable`
+- Detects new note vs existing note — label shows `✨ NEW NOTE` or `✏️ EDITING`
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## ✅ Assignment Requirements Covered
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Requirement | Implementation |
+|---|---|
+| `FlatList` | Notes listing screen |
+| `TextInput` | Search bar, title input, content input |
+| `Pressable` | Note cards, Back, Save, FAB, Clear button |
+| `Switch` | Dark / Light mode toggle |
+| `KeyboardAvoidingView` | Note editor screen |
+| `ImageBackground` | Both screens — header sections |
+| `useColorScheme()` | Auto dark/light theme detection |
+| `useWindowDimensions()` | Responsive layout for phones & tablets |
+| `StyleSheet.create()` | All styles |
+| `StyleSheet.compose()` | NoteCard — base + theme styles merged |
+| `StyleSheet.flatten()` | SearchBar — TextInput style flattened |
+| Dark & Light theme | Full theme system with `LIGHT_THEME` & `DARK_THEME` |
+| Responsive layout | 2-column grid on tablets, 1-column on phones |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🗂️ Project Structure
 
-When you're ready, run:
+```
+app/
+└── index.tsx        ← Both screens in one file
 
-```bash
-npm run reset-project
+Components (inside index.tsx):
+├── Header           ← ImageBackground + toggle
+├── SearchBar        ← Filter input
+├── NoteCard         ← Pressable card with tag/date/title/preview
+├── NotesListScreen  ← View 1 (default export)
+└── NoteEditorScreen ← View 2
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🎨 Theme — Norway 2025
 
-To learn more about developing your project with Expo, look at the following resources:
+Inspired by Norwegian fjords, forests, and the aurora borealis.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+| Token | Light | Dark |
+|---|---|---|
+| Background | `#EEF2F7` | `#0D1B2A` |
+| Surface | `#FFFFFF` | `#112236` |
+| Primary text | `#1A2744` | `#E8F0FA` |
+| Accent | `#2E86AB` | `#48CAE4` |
+| Border | `#D0DFF0` | `#1E3A52` |
 
-## Join the community
+**Images used:**
+- Listing screen header — Green fjord lake (Unsplash)
+- Editor screen header — Sunlit forest (Unsplash)
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## ⚙️ How to Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start Expo
+npx expo start
+```
+
+Then scan the QR code with **Expo Go** app on your phone.
+
+---
+
+## 🚀 Features Beyond Requirements
+
+- ✅ New note saved → appears at top of list
+- ✅ Existing note edited → updates in place (no duplicate)
+- ✅ Empty note validation before saving
+- ✅ `✨ NEW NOTE` vs `✏️ EDITING` label in editor header
+- ✅ Press animation on cards and buttons (`transform: scale`)
+- ✅ Tag color pills with dot indicators
+- ✅ Colored accent line at bottom of each card
+- ✅ Search results count shown while filtering
+
+---
+
+## 👤 Built With
+
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Unsplash](https://unsplash.com/) — for header images
