@@ -1,4 +1,6 @@
-# 🇳🇴 Norway Travel Notes App
+# Norway Travel Notes App
+
+
 
 A beautifully designed **Notes App** built with **React Native + Expo**, themed around a Norway travel journal. Built as part of a React Native UI assignment.
 
