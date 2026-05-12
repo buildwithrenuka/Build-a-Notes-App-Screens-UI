@@ -60,7 +60,7 @@ Components (inside index.tsx):
 
 ---
 
-## 🎨 Theme — Norway 2025
+## 🎨 Theme — Norway 2026
 
 Inspired by Norwegian fjords, forests, and the aurora borealis.
 
